@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Inicia animação da barra
                 setTimeout(() => {
                     const pBar = document.getElementById('p-bar');
-                    if (pBar) pBar.style.width = '99%';
+                    if (pBar) pBar.style.width = '78%';
                 }, 100);
 
             }, 1000);
