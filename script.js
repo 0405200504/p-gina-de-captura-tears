@@ -56,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const forms = document.querySelectorAll('.interactive-form');
     const whatsappGroupLink = "https://chat.whatsapp.com/ExemploGrupoTears";
 
+    // URL do seu Google Apps Script (Substitua após criar o script no Google Sheets)
+    const googleSheetUrl = "https://script.google.com/macros/s/AKfycbwcc2rvAOml2UPqP9V-D2DxxnF_FGM3zAaldYOxkpBRHavpY1lJlQwnPg8MPq4oxCeGjg/exec";
+
     forms.forEach(form => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -69,6 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(form);
             const name = formData.get('name');
+            const email = formData.get('email');
+
+            // Envio para o Google Sheets (se a URL estiver configurada)
+            if (googleSheetUrl) {
+                fetch(googleSheetUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                })
+                    .then(() => console.log("Lead salvo com sucesso!"))
+                    .catch(err => console.error("Erro ao salvar lead:", err));
+            }
 
             setTimeout(() => {
                 form.innerHTML = `
