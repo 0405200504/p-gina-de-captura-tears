@@ -87,15 +87,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 form.innerHTML = `
-                    <div class="form-success fade-up visible">
-                        <h3>✓ Inscrição Confirmada, ${name.split(' ')[0]}!</h3>
-                        <p>Redirecionando para o Grupo...</p>
+                    <div class="success-screen">
+                        <h3>SUA INSCRIÇÃO ESTÁ QUASE CONCLUÍDA!</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="p-bar"></div>
+                        </div>
+                        <p>Para finalizar entre no nosso grupo do WhatsApp</p>
+                        <a href="https://chat.whatsapp.com/IivqNxRT28xKtfymFHuDuM" class="cta-button primary pulse" style="width: 100%; margin-top: 1.5rem;">
+                            ENTRAR NO GRUPO AGORA <span class="icon">→</span>
+                        </a>
                     </div>
                 `;
 
+                // Inicia animação da barra
                 setTimeout(() => {
-                    window.location.href = whatsappGroupLink;
-                }, 2000);
+                    const pBar = document.getElementById('p-bar');
+                    if (pBar) pBar.style.width = '99%';
+                }, 100);
 
             }, 1000);
         });
