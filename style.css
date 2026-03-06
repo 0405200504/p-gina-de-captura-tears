@@ -330,7 +330,8 @@ input::placeholder {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    /* Alinha o conteúdo à esquerda */
     justify-content: center;
     text-align: left;
     padding-top: var(--space-xl);
@@ -389,7 +390,7 @@ input::placeholder {
     margin: 0 0 var(--space-xl) 0;
 }
 
-.mobile-section-image {
+.mobile-section-image-container {
     display: none;
 }
 
