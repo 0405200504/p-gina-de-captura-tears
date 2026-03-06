@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const whatsappGroupLink = "https://chat.whatsapp.com/ExemploGrupoTears";
 
     // URL do seu Google Apps Script (Substitua após criar o script no Google Sheets)
-    const googleSheetUrl = "https://script.google.com/macros/s/AKfycbwcc2rvAOml2UPqP9V-D2DxxnF_FGM3zAaldYOxkpBRHavpY1lJlQwnPg8MPq4oxCeGjg/exec";
+    const googleSheetUrl = "https://script.google.com/macros/s/AKfycbyjbE4TZBUG2mMjfjv3nm7P7PcZcBkDnam2PieNUKU6ATRkULB1DBrem2MgIPO1Qt2U4w/exec";
 
     forms.forEach(form => {
         form.addEventListener('submit', (e) => {
