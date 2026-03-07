@@ -81,7 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     mode: 'no-cors',
                     body: formData
                 })
-                    .then(() => console.log("Lead salvo com sucesso!"))
+                    .then(() => {
+                        console.log("Lead salvo com sucesso!");
+                        // Dispara evento do Meta Pixel
+                        if (typeof fbq === 'function') {
+                            fbq('track', 'Lead');
+                        }
+                    })
                     .catch(err => console.error("Erro ao salvar lead:", err));
             }
 
